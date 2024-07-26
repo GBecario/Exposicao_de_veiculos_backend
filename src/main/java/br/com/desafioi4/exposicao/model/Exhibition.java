@@ -5,16 +5,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-public class Vehicle {
+@Table(name = "exhibition")
+public class Exhibition {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "vehicle_id")
+	@Column(name = "exhibition_id")
 	private Long id;
 	private String title;
-	private String carName;
+	private String vehicle;
 	private String description;
 	
 	public Long getId() {
@@ -29,11 +31,11 @@ public class Vehicle {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getCarName() {
-		return carName;
+	public String getVehicle() {
+		return vehicle;
 	}
-	public void setCarName(String carName) {
-		this.carName = carName;
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 	public String getDescription() {
 		return description;
